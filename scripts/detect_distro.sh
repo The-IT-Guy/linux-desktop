@@ -4,7 +4,7 @@ case "$ID" in
  ubuntu|debian) PM="apt";;
  fedora|rhel|centos|almalinux|rocky) PM="dnf";;
  arch) PM="pacman";;
- *) die "Unsupported distro";;
+ *) die "Unsupported distro: $ID";;
 esac
-info "Detected $ID"
+info "Detected $ID (pm=$PM)"
 }

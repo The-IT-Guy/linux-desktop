@@ -18,6 +18,10 @@ source scripts/install_desktops.sh
 source scripts/install_vscode.sh
 source scripts/install_jetbrains.sh
 source scripts/install_services.sh
+source scripts/install_gtk_themes.sh
+source scripts/install_icons.sh
+source scripts/install_cursors.sh
+source scripts/install_kde_themes.sh
 source scripts/post_install.sh
 detect_distro
 require_sudo
@@ -26,5 +30,9 @@ install_desktops "$DESKTOP"
 install_vscode
 install_jetbrains
 install_services
+install_gtk_themes
+install_icon_packs
+install_cursor_themes
+install_kde_themes
 post_install
-echo "BOOTSTRAP COMPLETE"
+echo "BOOTSTRAP COMPLETE ✅"
