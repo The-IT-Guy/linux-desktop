@@ -8,7 +8,9 @@ echo "======================================"
 echo " Linux Desktop Bootstrap Installer"
 echo "======================================"
 
-# Detect package manager
+# ----------------------------
+# Detect Package Manager
+# ----------------------------
 if command -v apt >/dev/null 2>&1; then
   PM="apt"
 elif command -v dnf >/dev/null 2>&1; then
@@ -20,9 +22,13 @@ else
   exit 1
 fi
 
-echo "[INFO] Detected: $PM"
+echo "[INFO] Detected package manager: $PM"
 
+# ----------------------------
 # Install prerequisites
+# ----------------------------
+echo "[INFO] Installing git + curl..."
+
 case "$PM" in
   apt)
     sudo apt update
@@ -36,9 +42,11 @@ case "$PM" in
     ;;
 esac
 
+# ----------------------------
 # Clone or update repo
+# ----------------------------
 if [ -d "$INSTALL_DIR" ]; then
-  echo "[INFO] Updating existing repo..."
+  echo "[INFO] Repo exists. Updating..."
   cd "$INSTALL_DIR"
   git pull
 else
@@ -47,6 +55,8 @@ else
   cd "$INSTALL_DIR"
 fi
 
+# ----------------------------
 # Run installer
+# ----------------------------
 chmod +x install.sh scripts/*.sh
 ./install.sh "$@"
