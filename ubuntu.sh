@@ -14,7 +14,7 @@ git curl wget unzip zip \
 build-essential gcc g++ make gdb \
 vim neovim tmux \
 valgrind strace linux-tools-common linux-tools-generic \
-neofetch fastfetch \
+neofetch \
 nmap wireshark \
 libreoffice \
 gnome-terminal gnome-tweaks \
