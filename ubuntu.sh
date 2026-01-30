@@ -19,7 +19,7 @@ nmap wireshark \
 libreoffice \
 gnome-terminal gnome-tweaks \
 sassc optipng \
-geany eclipse kdevelop \
+geany kdevelop \
 inkscape gimp blender \
 gtk2-engines-murrine
 
